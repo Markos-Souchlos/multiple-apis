@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="url.css" />
+    <title>URL Shortener</title>
+</head>
+<body>
+
+    <%- include("partials/header.ejs") %>
+
+    <div id="container">
+        <h1>Paste your url</h1>
+        <form action="/post-url" method="post">
+            <input type="text" id="url" name="url" />
+            <% if (locals.content) {
+                content = content.replace(/"/g, '')%>
+                <p> &nbsp;<%= content %></p>
+            <%}%>
+            <input type="submit" value="Shorten" />
+        </form>
+    </div>
+</body>
+</html>
