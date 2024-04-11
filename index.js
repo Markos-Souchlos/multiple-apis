@@ -1,4 +1,4 @@
-import express from "express";
+import express, { application } from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
 
@@ -38,8 +38,18 @@ app.post("/post-url",async (req,res) => {
 
 
 //fetch dad joke
-// app.post("/dad-joke", (res,req) => {
+app.post("/dad-joke", async (req,res) => {
     
+    try {
+        const response = await axios.get("https://icanhazdadjoke.com",{
+            headers: {
+                Accept: 'application/json'
+            }
+        });
+        console.log(response.data.joke)
+        res.render("dad-jokes.ejs", {content: JSON.stringify(response.data.joke)});
+    } catch (error) {
+        res.render("dad-jokes.ejs", {content: JSON.stringify(response.data.joke)});
+    }
 
-
-// });
+});

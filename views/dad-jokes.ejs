@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dad-jk.css" />
+    <title>Dad Jokes</title>
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+    <div>
+        <% content = content.replace(/\n | \r/g, '<br />') %>
+        <p> <%-content %> </p>
+    </div>
+</body>
+</html>
