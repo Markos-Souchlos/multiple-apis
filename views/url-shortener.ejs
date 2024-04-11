@@ -13,7 +13,7 @@
     <div id="container">
         <h1>Paste your url</h1>
         <form action="/post-url" method="post">
-            <input type="text" id="url" name="url" />
+            <input type="text" id="url" name="url" autocomplete="off"/>
             <% if (locals.content) {
                 content = content.replace(/"/g, '')%>
                 <p> &nbsp;<%= content %></p>

@@ -8,9 +8,12 @@
 </head>
 <body>
     <%- include("partials/header.ejs") %>
-    <div>
-        <% content = content.replace(/\n | \r/g, '<br />') %>
+    <div id="joke">
+        <!-- <div id="space"></div> -->
         <p> <%-content %> </p>
+        <form action="/dad-joke" method="POST">
+            <input type="submit" value="refresh" />
+        </form>
     </div>
 </body>
 </html>

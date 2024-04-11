@@ -36,7 +36,7 @@ input[type="text"] {
 }
 
 
-input[type="submit"] {
+input[type="submit"]:not(.hb) {
     background-color: rgb(47, 255, 57);
     width:150px;
     height:42px;

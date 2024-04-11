@@ -1,22 +1,46 @@
-div {
+#joke {
     width:100%;
-    height:calc(100% - 70px);
-    display:flex;
+    height:calc(100vh - 70px);
+    padding-top: 50px;
 }
 
 p {
     border:3px solid black;
     border-radius:30px;
     text-align: center;
-    width:50%;
+    width:80%;
     display: block;
     margin: auto;
     font-size: 50px;
-    align-items:center;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    height:50%;
     text-shadow: 
         3px 3px 3px white,
         -3px 3px 3px white,
         3px -3px 3px white,
         -3px -3px 3px white;
+}
+
+#joke form {
+    display: block;
+    padding-top: 20px;
+}
+
+input:not(.hb) {
+    display: block;
+    margin:auto;
+    width:150px;
+    height:50px;
+    background-color: rgb(47, 255, 57);
+    color:white;
+    border-radius: 15px;
+    border:2px solid black;
+    font-size: 25px;
+}
+
+input:hover:not(.hb) {
+    cursor:pointer;
+    background-color: rgba(47, 255, 57,0.8);
 }

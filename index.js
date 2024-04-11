@@ -47,9 +47,25 @@ app.post("/dad-joke", async (req,res) => {
             }
         });
         console.log(response.data.joke)
-        res.render("dad-jokes.ejs", {content: JSON.stringify(response.data.joke)});
+        res.render("dad-jokes.ejs", {content: response.data.joke});
     } catch (error) {
         res.render("dad-jokes.ejs", {content: JSON.stringify(response.data.joke)});
+    }
+
+});
+
+
+
+//NASA Photo Of the Day
+app.post("/nasa-apod", async (req,res) => {
+    const apiKey = "SotcYoK4fGgyIOEVKpAKtMVgmETk3KFzRTiqMsfe";
+
+    try {
+        const response = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
+        console.log(response.data);
+        res.render("nasa-apod.ejs", {obj: response.data});
+    } catch (error) {
+        res.render("nasa-apod.ejs", {obj: "error"});
     }
 
 });
